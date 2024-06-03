@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SitterSignUp Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Edit.css') }}">
+</head>
+<body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a> 
+        <a href="{{ url_for('logout_page') }}" class="logout-button">
+            <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+        </a> 
+        <div class="inner">
+                    <div class="top-section">
+                        <h1><strong>Become A Pet Sitter!</strong></h1>
+                    </div>
+                    <!-- Middle-Top Section with Left and Right Subdivisions -->
+                    <div class="middle-section">
+                        <!-- Sitter Form -->
+                    <div class="form-section left">                      
+                        <div class="form-group">
+                            <form method="POST">
+                                <div class="form-group">
+                                    <label for="sittername"><strong>使用者名稱</strong></label>
+                                    {{ form.sitterusername(class="form-control", placeholder="Username") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="sitterpassword"><strong>設定密碼</strong></label>
+                                    {{ form.sitterpassword(class="form-control", placeholder="Password") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="sitterlineid "><strong>LineID</strong></label>
+                                    {{ form.sitterlineid(class="form-control", placeholder="Line ID") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="sitterusername"><strong>電話號碼</strong></label>
+                                    {{ form.sitterphonenumber(class="form-control", placeholder="Phone Number") }}
+                        `       </div>
+                                <div class="form-group">
+                                    <label for="sitteraddress"><strong>地址</strong></label>
+                                    {{ form.sitteraddress(class="form-control", placeholder="Address") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="sitteremail"><strong>Email</strong></label>
+                                    {{ form.sitteremail(class="form-control", placeholder="Email Address") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="acceptedpettypes"><strong>可接受寵物類型(dog/cat)</strong></label>
+                                    {{ form.sitterAcceptedPetTypes(class="form-control", placeholder="Accepted Pet Types(dog/cat)") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="ServiceTypes:"><strong>提供的服務(walk/foster)</strong></label>
+                                    {{ form.sitterServiceTypes(class="form-control", placeholder="Service Types(walk/foster)") }}
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <!-- Right Div for Services and Experience -->
+                    <div class="form-section right">
+                        <div class="form-group">                   
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="petspacesize"><strong>保母空間大小(number)</strong></label>
+                                    {{ form.sitterPetSpaceSize(class="form-control", placeholder="Pet Space Size(number)") }}   
+                                </div>
+                                <div class="form-group">
+                                    <label for="SitterVetExp"><strong>獸醫經驗(yes/no)</strong></label>
+                                    {{ form.SitterVetExp(class="form-control", placeholder="Experience in Care(yes/no)") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="SitterPetCareExperience"><strong>照顧經驗(yes/no)</strong></label>
+                                    {{ form.SitterPetCareExp(class="form-control", placeholder="Experience in Care(yes/no)") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="PetFeeder"><strong>餵食器(yes/no)</strong></label>
+                                    {{ form.PetFeeder(class="form-control", placeholder="PetFeeder(yes/no)") }}  
+                                </div>                              
+                                <div class="form-group">
+                                    <label for="CatTree"><strong>貓爬樹(yes/no)</strong></label>
+                                    {{ form.CatTree(class="form-control", placeholder="CatTree(yes/no)") }}   
+                                </div>      
+                                <div class="form-group">
+                                    <label for="PetBed"><strong>寵物床(yes/no)</strong></label>
+                                    {{ form.PetBed(class="form-control", placeholder="PetBed(yes/no)") }}  
+                                </div>   
+                                <div class="form-group">
+                                    <label for="Toy"><strong>玩具(yes/no)</strong></label>
+                                    {{ form.Toy(class="form-control", placeholder="Toy(yes/no)") }}  
+                                </div>
+                                <div class="form-group">
+                                    <label for="SecurityCamera"><strong>監視器(yes/no)</strong></label>
+                                    {{ form.SecurityCamera(class="form-control", placeholder="SecurityCamera(yes/no)") }}  
+                                </div>
+                        </form>
+                        </div>
+                        
+                </div>
+                </div>
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <button class="button-link" type="submit">Register</button>
+            </div>
+        </div>

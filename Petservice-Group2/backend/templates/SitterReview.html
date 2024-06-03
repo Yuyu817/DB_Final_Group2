@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/Review.css') }}">
+      <title>
+        Sitter Review Page
+      </title>
+   </head>
+   <body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+      <a href="{{ url_for('home_page') }}" class="home-button">
+          <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+      </a>
+      <a href="{{ url_for('logout_page') }}" class="logout-button">
+        <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+    </a> 
+  <div class="inner">
+    <div class="top-section">
+      <h1><strong>Past Reviews & Comments</strong></h1>
+      <h3><strong>Pastratings:{{ avg_rating }} !!!!</strong></h3>
+    </div>
+    <div class="middle-section">
+      <div class="form-section left">
+      {% for sitter in sitter %}
+        <div class="form-group">
+          <label>SitterName: {{ sitter.SitterName }}</label>
+        </div>
+        <div class="form-group">
+          <label>SitterLineID: {{ sitter.SitterLineID }}</label>
+        </div>
+        <div class="form-group">
+          <label>SitterEmail: {{ sitter.SitterEmail }} </label>
+        </div>
+        <div class="form-group">
+          <label>AcceptedType: {{ sitter.SitterAccPet }}</label>
+        </div>
+        <div class="form-group">
+          <label>ServiceType: {{ sitter.SitterServiceType }}</label>
+        </div>
+        <div class="form-group">
+          <label>SpaceSize: {{ sitter.SitterSpace }} </label>
+        </div>
+      </div>
+        <div class="form-section right">
+          <div class="form-group">
+            <label>PetCaringExperience: {{ sitter.SitterPetCareExp}}</label>
+          </div>
+          <div class="form-group">
+            <label> VetExperience: {{ sitter.SitterVetExp }}</label>
+          </div>
+
+          <div class="form-group">
+            <label>PetFeeder: {{ sitter.PetFeeder}}</label>
+          </div>
+          <div class="form-group">
+            <label>CatTree: {{ sitter.CatTree}} </label>
+          </div>
+          <div class="form-group">
+            <label>PetBed: {{ sitter.PetBed }}</label>
+          </div>
+          <div class="form-group">
+            <label>Toy: {{ sitter.Toy}}</label>
+          </div>
+          <div class="form-group">
+            <label>SecurityCamera: {{ sitter.SecurityCamera}}</label>
+          </div>
+        </div>
+        
+
+</div>
+<div class="bottom-section">
+        {% if sitter.SitterServiceType == 'walk' %}
+        <a class="button-link" href="{{ url_for('owner_search_reservation_walk_page',sitterid = sitter.SitterID) }}">Back</a>
+      {% elif sitter.SitterServiceType == 'foster' %}
+        <a class="button-link" href="{{ url_for('owner_search_reservation_foster_page',sitterid = sitter.SitterID) }}">Back</a>
+     {% endif %}
+    {% endfor %}
+        </div>
+</div>
+</body>
+</html>
+
+
+    
+    
+
+
+
+    
+    
+

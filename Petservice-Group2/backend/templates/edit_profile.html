@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SitterSignUp Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Edit.css') }}">
+</head>
+<body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a> 
+        <a href="{{ url_for('logout_page') }}" class="logout-button">
+            <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+        </a> 
+        <div class="inner">
+                {% if owner_form %}
+                <!-- Top Section -->
+                <div class="top-section">
+                    <h1><strong>Edit Profile</strong></h1>
+                </div>
+                <!-- Middle-Top Section with Left and Right Subdivisions -->
+                <div class="middle-section">
+                <!--  Div for Personal Information -->
+                <div class="form-section left">
+                                          
+                    <div class="form-group">
+                        <form action=""> 
+                            <h2>Edit Owner Information</h2>
+                            <p> {{ owner_form.ownerusername.label }}  {{ owner_form.ownerusername(class="form-control") }}</p>
+                            <p>{{ owner_form.ownerpassword.label }}  {{ owner_form.ownerpassword(class="form-control") }}</p>
+                            <p>{{ owner_form.owneremail_address.label }}  {{ owner_form.owneremail_address(class="form-control") }}</p>
+                            <p>{{ owner_form.ownerphonenumber.label }}  {{ owner_form.ownerphonenumber(class="form-control") }}</p>
+                            <p>{{ owner_form.owneraddress.label }}  {{ owner_form.owneraddress(class="form-control") }}</p>
+                        </form>
+                    </div>
+                    
+                </div>
+                <!-- Right Div for Services and Experience -->
+                <div class="form-section right">    
+                    <div class="form-group">
+                        <form action="">
+                            <h2>Edit Pet Information</h2> 
+                            <p>{{ pet_form.pettype.label }} {{ pet_form.pettype(class="form-control") }}</p>
+                            <p> {{ pet_form.petname.label }}  {{ pet_form.petname(class="form-control") }}</p>
+                            <p>{{ pet_form.petsize.label }} {{ pet_form.petsize(class="form-control") }}</p>
+                            <p>{{ pet_form.petage.label }}  {{ pet_form.petage(class="form-control") }}</p>
+                            <p>{{ pet_form.habits.label }}  {{ pet_form.habits(class="form-control") }}</p>
+                            <p>{{ pet_form.specialneed.label }}  {{ pet_form.specialneed(class="form-control") }}</p>    
+                    
+                        </form>
+                    </div>
+                    {% endif %} 
+                
+                    {% if sitter_form %}
+                    <div class="top-section">
+                        <h1><strong>Edit Sitter Profile</strong></h1>
+                    </div>
+                    <!-- Middle-Top Section with Left and Right Subdivisions -->
+                    <div class="middle-section">
+                        <!-- Sitter Form -->
+                    <div class="form-section left">                      
+                        <div class="form-group">
+                            <form method="POST">
+                            <h2>Edit Sitter Information</h2>
+                            <p>{{ sitter_form.sitterusername.label }}  {{ sitter_form.sitterusername(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterlineid.label }}  {{ sitter_form.sitterlineid(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterpassword.label }}  {{ sitter_form.sitterpassword(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterphonenumber.label }}  {{ sitter_form.sitterphonenumber(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitteraddress.label }}  {{ sitter_form.sitteraddress(class="form-control") }}</p>
+                            <p> {{ sitter_form.sitteremail.label }}  {{ sitter_form.sitteremail(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterExperienceInVet.label }}  {{ sitter_form.sitterExperienceInVet(class="form-control") }}</p>  
+                            <p> {{ sitter_form.sitterExperienceInPetCare.label }}  {{ sitter_form.sitterExperienceInPetCare(class="form-control") }}</p>  
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <!-- Right Div for Services and Experience -->
+                    <div class="form-section right">
+                        <div class="form-group">                   
+                            <form action="">
+                            <p>{{ sitter_form.sitterAcceptedPetTypes.label }}  {{ sitter_form.sitterAcceptedPetTypes(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterServiceTypes.label }}  {{ sitter_form.sitterServiceTypes(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterPetSpaceSize.label }}  {{ sitter_form.sitterPetSpaceSize(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterPetFeeder.label }}  {{ sitter_form.sitterPetFeeder(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterCatTree.label }}  {{ sitter_form.sitterCatTree(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterPetBed.label }} {{ sitter_form.sitterPetBed(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterToy.label }}  {{ sitter_form.sitterToy(class="form-control") }}</p>
+                            <p>{{ sitter_form.sitterSecurityCamera.label }} {{ sitter_form.sitterSecurityCamera(class="form-control") }}</p>
+                        </form>
+                        </div>
+                        {% endif %}  
+                        
+                </div>
+                </div>
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <button class="button-link" type="submit">Update</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

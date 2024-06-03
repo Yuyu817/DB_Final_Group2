@@ -1,0 +1,181 @@
+/* Base styles for body to ensure full coverage of background image */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Wrapper styles to position and style the background image */
+.wrapper {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Home button styling */
+.home-button {
+    position:absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logout-button {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+}
+
+.logout-button img {
+    max-width: 35%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 35%; /* 限制圖片最大高度為容器高度 */
+    display: block; /* 避免底部出現額外間隙 */
+    transform: translateX(75px); /* 向右移動 20 像素 */
+    }
+
+.walk-img {
+        display: block;
+        position: absolute;
+        top: 420px;
+        right: 950px;
+        max-width: 25%; /* 限制圖片最大寬度為容器寬度 */
+        max-height: 25%; /* 限制圖片最大高度為容器高度 */
+    }
+
+.sitting-img {
+        display: block;
+        position: absolute;
+        top:420px;
+        right: 420px;
+        max-width: 25%; /* 限制圖片最大寬度為容器寬度 */
+        max-height: 25%; /* 限制圖片最大高度為容器高度 */
+    }
+
+/* Inner wrapper styles for the form area */
+.inner {
+    background-color: rgba(245, 245, 245, 0.7);
+    border-color: 2px grey;
+    border-radius: 10px;
+    display: flex; /* Use flexbox to center the content */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    padding: 20px; /* Reduced padding */
+    width: 500px; /* Adjust width as necessary */
+    max-width: 100%; /* Make sure it doesn't exceed the viewport width on smaller screens */
+    margin: auto; /* This will center the .inner block if it has a width */
+    overflow: hidden5; /* Prevents content from spilling out */
+    padding-top: 10px;
+    padding-bottom: 5px; /* 調整下方內邊距 */
+}
+
+
+/* Styling the form and its elements */
+form {
+    padding: 40px; /* Adjust as necessary */
+    width: 50%;
+}
+
+.form-group, .form-wrapper {
+    margin-bottom: 20px;
+}
+
+form h3 {
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex; /* 使用flexbox來排列子元素 */
+    flex-direction: column; /* 子元素垂直排列 */
+    align-items: center; /* 水平置中 */
+    justify-content: center; /* 垂直置中 */
+    height: 100%; /* 設定適當的高度 */
+    width: 100%; /* 設定適當的寬度 */
+}
+
+.input-group {
+    width: 120%; /* Input group should take the full width */
+    display: flex;
+    justify-content: space-between; /* This will give space between the label and the input */
+    align-items: center; /* Align the items vertically */
+    margin-bottom: 10px; /* Add some space between the input groups */
+}
+
+p::before {
+    content: '• ';  /* Unicode character for a bullet point */
+    display: inline-block;  /* Makes the bullet point inline with text */
+    margin-right: 5px;  /* Adds some space between the bullet point and the label */
+    color: black;  /* Ensures the bullet point is the same color as the label */
+}
+
+label {
+    margin-right: 10px; /* 在標籤和輸入框之間添加間隔 */
+    white-space: nowrap; /* 防止標籤換行 */
+}
+
+.checkbox-group > div {
+    display: inline-block;
+    margin-right: 10px; /* Space between checkboxes */
+}
+
+.button-link {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 20px;
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #93bf85; /* Border color */
+    background-color: #9bc58c; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.button-link:hover {
+    background-color: #93bf85; /* Darker background on hover */
+}
+
+
+table {
+    width: 100%; /* Full width to maximize space */
+    border-collapse: collapse; /* Ensures borders between cells are merged */
+    table-layout: fixed; /* Helps in applying equal width to all columns */
+}
+
+th, td {
+    border: 1px solid #ccc; /* Light grey border for each cell */
+    text-align: center; /* Centers text horizontally */
+    vertical-align: middle; /* Centers text vertically */
+    padding: 10px; /* Adds space around text */
+}
+th {
+    background-color: #f2f2f2; /* Light grey background for headers */
+    color: #333; /* Dark grey text color */
+    font-weight: bold; /* Makes header text bold */
+}
+.parent-container {
+    display: flex;
+    justify-content: center; /* Horizontally centers the button */
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .inner {
+        flex-direction: column;
+        width: 90%; /* Adjust as necessary for smaller devices */
+    }
+
+    .image-holder, form {
+        width: 100%;
+    }
+}

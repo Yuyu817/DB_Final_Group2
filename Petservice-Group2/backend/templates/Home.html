@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寵物保母媒合網站</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Home.css') }}">
+</head>
+<body style="background-image: url('../static/img/background.jpg');">
+    <header>
+        <div class="logo"><h1>PETSITTER</h1></div>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#services">SERVICE</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+    
+            </ul>
+        </nav>
+            <img src="{{ url_for('static', filename='img/D1.png') }}" alt="" class="top-right-image">
+
+    </header>
+
+    <section id="about"class="hero">
+        <h1>Highest Quality Care For Pets You'll Love</h1>
+        <a class="button-link" href="{{ url_for('login_mode') }}">LOGIN</a>
+    </section>
+
+    <section id="services">
+        <div class="service-title">
+        </div>
+        <div class="service-info">
+        <div class="service">
+            <h2>SITTING</h2>
+            <p>Providing day and night care services to ensure your pet receives the best care while you are busy.</p>
+
+            <img class="sitting-img" src="{{ url_for('static', filename='img/Sitting.png') }}" alt="">
+        </div>
+        <div class="service">
+            <h2>WALKING</h2>
+            <p>Our professional pet walking service ensures your pet gets ample exercise and enjoyment, even when your schedule is packed.</p>
+            <img class="walk-img" src="{{ url_for('static', filename='img/Walk.png') }}" alt="">
+        </div>
+    </div>
+    </section>
+
+</body>
+</html>

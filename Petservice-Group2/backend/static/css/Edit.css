@@ -1,0 +1,218 @@
+/* Base styles for body to ensure full coverage of background image */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto; /* 这将使网页在大屏幕上居中显示 */
+}
+
+
+/*background image styling */
+.wrapper {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+/* Home button styling */
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.home-button img {
+    max-width: 100%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 100%; /* 限制圖片最大高度為容器高度 */
+    display: block; /* 避免底部出現額外間隙 */
+}
+
+.logout-button {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+}
+
+.logout-button img {
+    max-width: 35%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 35%; /* 限制圖片最大高度為容器高度 */
+    display: block; /* 避免底部出現額外間隙 */
+    transform: translateX(75px); /* 向右移動 20 像素 */
+    }
+
+/* Inner wrapper styling */
+.inner {
+    background-color: rgba(245, 245, 245, 0.7);
+    border-color: 2px grey;
+    background-size:100% 120%; /* 拉長圖片，寬度100%，高度150% */
+    border-radius: 10px;
+    background-repeat: no-repeat; /* 確保圖片不會重複 */
+    /* Centering the content box */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Setting the box as a square */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Inner: top-section*/
+.top-section {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.top-section h1 {
+    font-size: 42px; /* Example font size */
+    color: #333; /* Example text color */
+    font-weight: bold; /* Make text bold */
+    margin-bottom: 10px; /* Space below the header */
+    text-align: center; /* Center align the text */
+}
+
+
+/* Inner: middle-section */
+.middle-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 10;
+}
+
+/*middle-section: photo-wrapper*/
+.photo-wrapper {
+    display: flex; /* Ensures flex properties are applied */
+    flex: 0.8;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-right: 15px;
+    align-items: center; /* Keeps vertical centering */
+    justify-content: flex-end; /* Aligns content to the right */
+}
+.photo-wrapper .babysitter-photo {
+    width: 65%;
+    height: auto;
+    border-radius: 60%;
+    display: block;
+}
+
+/*middle-section: form-section*/
+.form-section {
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex; /* Ensures flex properties are applied */
+
+}
+
+
+.form-section.left, .form-section.right{
+    display: flex;
+    flex-direction: row; /* 水平布局 */
+}
+
+.form-section.left{
+    flex: .8;
+    justify-content: flex-end; /* Aligns content to the right */
+
+}
+
+.form-section.right{
+    flex: 1;
+    
+    justify-content: flex-start; 
+}
+
+/* Styling for inputs and selects */
+.form-control {
+    height: 10px;
+    width: 80%;  /* 如果需要调整宽度 */
+    font-size: 14px;  /* 字体大小可以适当减小以适应更小的输入框 */
+    box-sizing: border-box;  /* 包括padding和border在内的总宽度 */
+    border: 1px solid #ccc;  /* 可以调整边框颜色和样式 */
+    border-radius: 4px;  /* 轻微的圆角边缘 */
+    height: auto;  /* 让高度自动调整基于内边距和内容 */
+    margin-bottom: 5px;
+    flex: 1; /* 输入框占用剩余空间 */
+    padding: 8px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    min-width: 400px; /* Ensures it never gets narrower than 200px */
+    max-width: 400px; /* Ensures it never gets wider than 400px */
+}
+
+.form-group p {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    margin-bottom: 8px; /* 添加一些间距 */
+    line-height: 0.4;
+}
+
+.form-group p::before {
+    content: '• ';  /* Unicode character for a bullet point */
+    display: inline-block;  /* Makes the bullet point inline with text */
+    margin-right: 5px;  /* Adds some space between the bullet point and the label */
+    color: black;  /* Ensures the bullet point is the same color as the label */
+}
+
+.label {
+    flex: 0 0 150px; /* 给标签一个固定宽度 */
+    color: rgb(16, 3, 3); /* 设置文本颜色为黑色 */
+}
+
+.form-section  label {
+    font-size: 18px; /* 调整字体大小 */
+    color: black; /* 确保颜色设置也能看到，以验证样式应用 */
+}
+.bottom-section {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    flex: 1;
+    padding: 20px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #93bf85; /* Border color */
+    background-color: #9bc58c; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.button-link:hover {
+    background-color: #93bf85; /* Darker background on hover */
+}
+
+
+/* Adjust responsive layout */
+@media (max-width: 768px) {
+    .middle-top-section {
+        flex-direction: column;
+    }
+    .photo-wrapper, .form-section {
+        width: 100%;
+        padding: 10px;
+    }
+}

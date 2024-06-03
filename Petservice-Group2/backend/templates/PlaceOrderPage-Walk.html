@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Walk Reservation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/PlaceOrder.css') }}">
+</head>
+<body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a>
+        <a href="{{ url_for('logout_page') }}" class="logout-button">
+            <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+        </a> 
+        <img class="walk-img" src="{{ url_for('static', filename='img/Walk.png') }}" alt="">
+        <div class="inner">
+    <h1>Place Walk Reservation for {{ sittername }}</h1>
+
+    <div class="form-section right">
+        <form method="POST">
+            <div class="form-section left"> 
+                <label for="sittername"><strong>SitterName:{{ sittername }}</strong></label>
+                <a  href="{{ url_for('SitterReview_Page')}}" class="btn btn-primary">      See Sitter Comment</a>
+            </div>
+            <br>
+            {{ form.hidden_tag() }}
+        </div>
+        <div class="form-group">
+ 
+        <p>{{ form.startdate.label() }}&nbsp;
+            {{ form.startdate(class="form-control", placeholder="Startdate(YYYY-MM-DD)") }}</p>
+            
+        </div>
+        <div class="form-group">
+
+            <p>{{ form.frequency.label() }}&nbsp;
+            {{ form.frequency(class="form-control", placeholder="Frequency") }}</p>
+    </div>
+    <div class="form-group">
+
+        <p>{{ form.duration.label() }}&nbsp;
+            {{ form.duration(class="form-control", placeholder="Duration") }}</p>
+
+    </div>
+            <div class="button-link">
+                {{ form.submit(class="button-link") }}
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

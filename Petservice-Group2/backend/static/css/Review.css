@@ -1,0 +1,206 @@
+/* Base styles for body to ensure full coverage of background image */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto; /* 这将使网页在大屏幕上居中显示 */
+}
+
+
+/*background image styling */
+.wrapper {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+/* Home button styling */
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.home-button img {
+    max-width: 100%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 100%; /* 限制圖片最大高度為容器高度 */
+    display: block; /* 避免底部出現額外間隙 */
+}
+
+.logout-button {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+}
+
+.logout-button img {
+    max-width: 35%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 35%; /* 限制圖片最大高度為容器高度 */
+    display: block; /* 避免底部出現額外間隙 */
+    transform: translateX(75px); /* 向右移動 20 像素 */
+    }
+
+/* Inner wrapper styling */
+.inner {
+    background-color: rgba(245, 245, 245, 0.7);
+    border-color: 2px grey;
+    border-radius: 10px;
+    /* Centering the content box */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Setting the box as a square */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%; /* Adjusted width to be narrower */
+    
+}
+
+/* Inner: top-section*/
+.top-section {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    flex: 1;
+    padding: 20px;
+}
+
+.top-section h1 {
+    font-size: 36px; /* Example font size */
+    color: #333; /* Example text color */
+    font-weight: bold; /* Make text bold */
+    margin-bottom: 20px; /* Space below the header */
+    text-align: center; /* Center align the text */
+}
+
+
+/* Inner: middle-section */
+.middle-section {
+    display: flex;
+    flex: 10;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+/*middle-section: form-section*/
+.form-section {
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-section.left, .form-section.right{
+    display: flex;
+    flex-direction: column; /* 水平布局 */
+}
+
+.form-section.left{
+    flex: .8;
+}
+
+.form-section.right{
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    min-width: 400px; /* Ensures it never gets narrower than 200px */
+    max-width: 400px; /* Ensures it never gets wider than 400px */
+}
+
+.form-group p {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center;
+    margin-bottom: 8px; /* 添加一些间距 */
+    line-height: 0.4;
+}
+
+
+.form-group label::before {
+    content: '• ';  /* Unicode character for a bullet point */
+    display: inline-block;  /* Makes the bullet point inline with text */
+    margin-right: 5px;  /* Adds some space between the bullet point and the label */
+    color: black;  /* Ensures the bullet point is the same color as the label */
+}
+
+
+.label {
+    flex: 0 0 150px; /* 给标签一个固定宽度 */
+    color: black; /* 设置文本颜色为黑色 */
+}
+.form-group label {
+    display: flex;
+    align-items: center; /* Vertically center the contents */
+    justify-content: center;
+    width: 100%; /* Ensure the label takes full width of its container */
+}
+.bottom-section {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    flex: 1;
+    padding: 20px;
+    margin-top: auto;  /* Pushes the bottom-section to the bottom */
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #93bf85; /* Border color */
+    background-color: #9bc58c; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.button-link:hover {
+    background-color: #93bf85; /* Darker background on hover */
+}
+
+table {
+    width: 80%; /* Full width to maximize space */
+    border-collapse: collapse; /* Ensures borders between cells are merged */
+    table-layout: fixed; /* Helps in applying equal width to all columns */
+}
+
+th, td {
+    border: 1px solid #ccc; /* Light grey border for each cell */
+    text-align: center; /* Centers text horizontally */
+    vertical-align: middle; /* Centers text vertically */
+    padding: 10px; /* Adds space around text */
+}
+th {
+    background-color: #f2f2f2; /* Light grey background for headers */
+    color: #333; /* Dark grey text color */
+    font-weight: bold; /* Makes header text bold */
+}
+/* Adjust responsive layout */
+@media (max-width: 768px) {
+    .middle-top-section {
+        flex-direction: column;
+    }
+    .photo-wrapper, .form-section {
+        width: 100%;
+        padding: 10px;
+    }
+}

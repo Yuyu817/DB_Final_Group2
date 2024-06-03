@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/OrderList.css') }}">
+      <title>
+        Sitter Order List Page
+      </title>
+   </head>
+   <body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a>
+        <a href="{{ url_for('logout_page') }}" class="logout-button">
+            <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+        </a> 
+        <div class="top-section">
+            <h1>Sitter Order Information</h1>
+        </div>
+        <div class="middle-section">
+        {% if type == 'foster' %}
+        <div class="inner">
+            {% for pet in pet %}
+            <div class="form-section left">
+                <h3>Order Information</h3>
+                <div class="form-group">
+                    <P><label>PetType: {{ pet.PetType }}</label></P>
+                </div>
+                <div class="form-group">
+                    <p><label>PetName: {{ pet.PetName }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>PetSize: {{ pet.PetSize }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>PetType: {{ pet.PetAge }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>VaccinationStatus: {{ pet.VaccinationStatus }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>Habits: {{ pet.Habits }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>SpecialNeed: {{ pet.SpecialNeed }}</label></p>
+                </div>
+            {% endfor %}
+            </div>
+            <div class="form-section right">
+                <h3>Service Type</h3>
+                <div class="form-group">
+                    <p><label>ServiceType: {{type}}</label></p>
+                </div>
+                {% for fostercare in fostercare %}
+                <div class="form-group">
+                    <p><label>Startdate: {{ fostercare.startdate }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>End Date: {{ fostercare.enddate }}</label></p>
+                </div>
+                {% endfor %}
+                {% for owner in owner %}
+                <div class="form-group">
+                    <p><label>OwnerName: {{ owner.OwnerName }}</label></p>
+                </div>
+                {% endfor %}
+                <div class="form-group">
+                    <p><label>Average Rating: {{ avg_rating }}</label></p>
+                 </div>
+            <form action="{{ url_for('OwnerReview_Page') }}" method="get">
+                <button type="submit" class="button-link">Past Reviews</button>
+                <a class="button-link" href="{{ url_for('comment') }}">write comments</a>
+            </form>
+
+        {% elif type == 'walk' %}
+        <div class="inner">
+            <div class="form-section left">
+                <h3>Order Information</h3>
+            {% for pet in pet %}
+            <div class="form-group">
+                <P><label>PetType: {{ pet.PetType }}</label></P>
+            </div>
+            <div class="form-group">
+                <P><label>PetName: {{ pet.PetName }}</label></P>
+            </div>
+            <div class="form-group">
+                <P><label>PetSize: {{ pet.PetSize }}</label></P>
+            </div>
+            <div class="form-group">
+                <P><label>PetSize: {{ pet.PetAge }}</label></P>
+            </div>
+            <div class="form-group">
+                <P><label>VaccinationStatus: {{ pet.VaccinationStatus }}</label></P>
+            </div>            
+            <div class="form-group">
+                <P><label>Habits: {{ pet.Habits }}</label></P>
+            </div> 
+            <div class="form-group">
+                <P><label>SpecialNeed: {{ pet.SpecialNeed }}</label></P>
+            </div> 
+            {% endfor %}
+            </div>
+            <div class="form-section right">
+                <h3>Service Type</h3>
+                <div class="form-group">
+                    <p><label>ServiceType: {{type}}</label></p>
+                </div>
+                {% for walk in walk %}
+                <div class="form-group">
+                    <p><label>Start Date: {{ walk.startdate }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>Duration: {{ walk.duration }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>Frequency: {{ walk.frequency }}</label></p>
+                 </div>
+                {% endfor %}
+
+                 {% for owner in owner %}
+                 <div class="form-group">
+                    <p><label>OwnerName: {{ owner.OwnerName }}</label></p>
+                 </div>
+                {% endfor %}
+            <div class="form-group">
+                <p><label>Average Rating: {{ avg_rating }}</label></p>
+             </div>
+            <!-- forreview -->
+            <form action="{{ url_for('OwnerReview_Page') }}" method="get">
+                <button type="submit" class="button-link">Past Reviews</button>
+                <a class="button-link" href="{{ url_for('comment') }}">Write Comments</a>
+            </form>
+
+
+        {% endif %}
+    
+        </div>
+        </div>
+
+   </body>
+</html>
+
+
+

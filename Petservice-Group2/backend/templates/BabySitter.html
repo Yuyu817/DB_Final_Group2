@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>BabySitter Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/User.css') }}">
+</head>
+<body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a> 
+        <a href="{{ url_for('logout_page') }}" class="logout-button">
+            <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+        </a> 
+    <div class="inner">
+        <div class="top-section">
+            <div class="photo-wrapper">
+                <p><h1><strong>User Profile</strong></h1></p>
+                <img src="{{ url_for('static', filename='img/Sitter.png') }}" alt="" class="user-photo">
+                <p><strong>Pet Sitter</strong></p>
+            <div class="info-wrapper">
+                <a class="button-link"  href="{{ url_for('edit_profile') }}">Edit</a>
+            </div>
+        </div>
+            
+        </div>
+        <div class="order-notification">
+                <h2>Order</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sitter Name</th>
+                            <th>Pet Name</th>
+                            <th>Order Type</th>
+                            <th>Sitter Phone Number</th>
+                            <th>Sitter LineID</th>
+                            <th>More Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for data in reservations %}
+                        <tr>
+                            <td>{{ data.owner.OwnerName }}</td>
+                            <td>{{ data.reservation.reservationtype }}</td>
+                            <td>{{ data.pet.PetType }}</td>
+                            <td>{{ data.pet.PetAge }}</td>
+                            <td>{{ data.pet.PetSize }}</td>
+                            <td><a class="button-link" href="{{ url_for('SitterOrderList_Page', reservation_id=data.reservation.reservationid)}}"> Click Me </a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

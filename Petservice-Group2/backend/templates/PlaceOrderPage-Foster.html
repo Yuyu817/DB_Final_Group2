@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Foster Reservation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/PlaceOrder.css') }}">
+</head>
+<body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a>
+        <a href="{{ url_for('logout_page') }}" class="logout-button">
+            <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+        </a> 
+        <img class="walk-img" src="{{ url_for('static', filename='img/Walk.png') }}" alt="">
+        <div class="inner">
+    <h1>Place Foster Reservation for {{ sittername }}</h1>
+
+    <div class="form-section right">
+        <form method="POST">
+            <div class="form-section left"> 
+                <label for="sittername">保母名字</label>
+                <p>{{ sittername }}</p>
+                <br>
+                <a href="{{ url_for('SitterReview_Page')}}" class="btn btn-primary">See Sitter Comment</a>
+            </div>
+            <br>
+            {{ form.hidden_tag() }}
+        </div>
+        <div class="form-group">
+            <p>{{ form.startdate.label }}&nbsp;
+            {{ form.startdate(class="form-control", placeholder="Startdate(YYYY-MM-DD)") }}
+            </p>
+        </div>
+        <div class="form-group">
+            <p>{{ form.enddate.label }}&nbsp;
+            {{ form.enddate(class="form-control", placeholder="Enddate(YYYY-MM-DD)") }}</p>
+        </div>
+            <div class="button-link">
+                {{ form.submit(class="button-link") }}
+            </div>
+        </form>
+    </div>
+</body>
+</html>

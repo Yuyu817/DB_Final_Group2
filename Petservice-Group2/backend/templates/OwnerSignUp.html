@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OwnerSignUp Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Edit.css') }}">
+</head>
+<body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a> 
+        <a href="{{ url_for('logout_page') }}" class="logout-button">
+            <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+        </a> 
+        <div class="inner">
+                    <div class="top-section">
+                        <h1><strong>Registering As A Pet Owner!</strong></h1>
+                    </div>
+                    <!-- Middle-Top Section with Left and Right Subdivisions -->
+                    <div class="middle-section">
+                        <!-- Sitter Form -->
+                    <div class="form-section left">                      
+                        <div class="form-group">
+                            <form method="POST">
+                                <div class="form-group">
+                                    <label for="ownername"><strong>使用者名稱 </strong></label>
+                                    {{ form2.ownerusername(class="form-control", placeholder="Username") }}
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="owneremail"><strong>email </strong></label>
+                                    {{ form2.owneremail_address(class="form-control", placeholder="Email Address") }}
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="owneraddress"><strong>住址 </strong></label>
+                                    {{ form2.owneraddress(class="form-control", placeholder="Address") }}
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="phonenumber"><strong>電話號碼 </strong></label>
+                                    {{ form2.ownerphonenumber(class="form-control", placeholder="Phone Number") }}
+                                </div>
+                                
+        
+                                 <div class="form-group">
+                                    <label for="ownerpassword"><strong>設定密碼 </strong></label>
+                                    {{ form2.ownerpassword(class="form-control", placeholder="Password") }}
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <!-- Right Div for Services and Experience -->
+                    <div class="form-section right">
+                        <div class="form-group">                   
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="petname"><strong>寵物暱稱 </strong></label>
+                                    {{ form1.petusername(class="form-control", placeholder="Pet Username") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="pettype"><strong>寵物類型(dog/cat/all)</strong></label>
+                                    {{ form1.pettype(class="form-control", placeholder="Pet Type") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="petsize"><strong>寵物尺寸</strong></label>
+                                    {{ form1.petsize(class="form-control", placeholder="Pet Size") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="petage"><strong>寵物年齡 </strong></label>
+                                    {{ form1.petage(class="form-control", placeholder="Pet Age") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="petage"><strong>寵物習慣 </strong></label>
+                                    {{ form1.pethabit(class="form-control", placeholder="Pet Habit") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="vaccine"><strong>疫苗紀錄(number)</strong></label>
+                                    {{ form1.petvacinnationstatus(class="form-control", placeholder="Vaccination Status") }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="vaccine"><strong>特殊需求 </strong></label>
+                                    {{ form1.petspecialneed(class="form-control", placeholder="Special Needs") }}
+                                </div> 
+                        </form>
+                        </div>
+                        
+                </div>
+                </div>
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <button class="button-link" type="submit">Register</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

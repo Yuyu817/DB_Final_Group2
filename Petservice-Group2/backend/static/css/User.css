@@ -1,0 +1,159 @@
+/* Base styles for body to ensure full coverage of background image */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Wrapper styles to position and style the background image */
+.wrapper {
+    background-image: url('background-image.jpeg'); /* Update with your background image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+/* Home button styling */
+.home-button {
+    position:absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logout-button {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+}
+
+.logout-button img {
+    max-width: 35%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 35%; /* 限制圖片最大高度為容器高度 */
+    display: block; /* 避免底部出現額外間隙 */
+    transform: translateX(75px); /* 向右移動 20 像素 */
+    }
+/* Inner wrapper styles for the content area */
+.inner {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    width: 900px; /* Adjust as necessary */
+    border-radius: 10px;
+    overflow: hidden; /* Ensures the child elements fit within the rounded corners */
+    flex-direction: row;
+    display: flex;  /* Uses flexbox to layout children */
+}
+
+/* Top section styles */
+.top-section {
+    flex: 1;  /* Takes 1 part of the space */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Photo wrapper styles */
+.photo-wrapper {
+    display: flex;  /* Establishes this element as a flex container */
+    width: 90%;
+    padding: 5px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    justify-content: flex-end; /* Aligns children to the right */
+    align-items: center; /* Vertically centers children in the container */
+    flex-direction: column;
+}
+
+
+/* The actual photo inside the holder */
+.photo-wrapper .user-photo {
+    width: 80%;
+    height: auto;
+    border-radius: 50%; /* Make the photo circular */
+    display: block; /* Remove any extra space beneath the image */
+}
+
+/* Info wrapper styles */
+.info-wrapper {
+    display: flex;  /* Establishes this element as a flex container */
+    flex-direction: row;  /* Aligns children horizontally */
+    padding: 40px;
+    width: 90%;  /* Adjust width as necessary */
+    justify-content: space-evenly;
+}
+
+/* Order notification styles */
+.order-notification {
+    width: 100%;
+    flex: 2;  /* Takes 2 parts of the space */
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    align-items: center;
+    justify-content: center;
+}
+
+.order-notification div {
+    cursor: pointer;
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+
+
+/* Styling the button */
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #93bf85; /* Border color */
+    background-color: #9bc58c; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.button-link:hover {
+    background-color: #93bf85; /* Darker background on hover */
+}
+
+
+table {
+    width: 100%; /* Full width to maximize space */
+    border-collapse: collapse; /* Ensures borders between cells are merged */
+    table-layout: fixed; /* Helps in applying equal width to all columns */
+}
+
+th, td {
+    border: 1px solid #ccc; /* Light grey border for each cell */
+    text-align: center; /* Centers text horizontally */
+    vertical-align: middle; /* Centers text vertically */
+    padding: 10px; /* Adds space around text */
+}
+th {
+    background-color: #f2f2f2; /* Light grey background for headers */
+    color: #333; /* Dark grey text color */
+    font-weight: bold; /* Makes header text bold */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .top-section {
+        flex-direction: column;
+    }
+
+    .photo-wrapper, .info-wrapper {
+        width: 100%;
+    }
+
+    button {
+        width: calc(100% - 80px); /* Adjust button width on smaller screens */
+        margin: 0 40px;
+    }
+}
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/OwnerSearchFilter.css') }}">
+</head>
+<body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a>
+        <a href="{{ url_for('logout_page') }}" class="logout-button">
+            <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+        </a> 
+    <div class="inner">
+    <h1>Available Sitters</h1>
+    <table>
+        <thead>
+            <tr>
+                <!-- Your Columns HERE -->
+                <th scope="col">Sitter Name</th>
+                <th scope="col">Average Rating</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for data in filterdata %}
+                <tr>
+                    <td>{{ data.sittername  }}</td>
+                    <td>{{ data.avgrating }}</td>
+                    {% if data.servicetype == 'foster' %}
+                        <td><a class="button-link" href="{{ url_for('owner_search_reservation_foster_page', sitterid=data.sitterid) }}"> Booking </a></td>
+                    {% elif data.servicetype == 'walk' %}
+                        <td><a class="button-link" href="{{ url_for('owner_search_reservation_walk_page', sitterid=data.sitterid) }}"> Booking </a></td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* 基本體設定 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../static/img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 頭部樣式 */
+header {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+.top-right-image {
+    position:absolute;
+    top: 20px;
+    right: 20px;
+    width: 300px; /* Sets the width of the image */
+}
+/* 導航欄樣式 */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* 英雄區塊樣式 */
+#about {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    width: 100%; /* Full width of its parent */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Ensure text within is also centered */
+}
+
+
+.hero {
+    text-align: center;
+    color: black;
+    padding: 100px 18px;
+    justify-content: center; /* Center horizontally */
+    
+}
+
+#services {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Adjust width as necessary */
+    height: auto; /* You can set a specific height if needed */
+}
+
+.service-title {
+    flex: 1;  /* Takes up 1 part of the space */
+    background-color: #f8f8f8; /* Example background color for better visibility */
+}
+
+.service-info {
+    flex: 5;  /* Takes up 5 parts of the space */
+    display: flex;  /* Enables flexbox for child elements */
+    flex-direction: row;  /* Aligns children side by side */
+    justify-content: space-between;  /* Distributes space evenly between children */
+    background-color: #f8f8f8; /* Example background color for better visibility */
+}
+.service {
+    flex: 1;  /* Each service takes equal width */
+    padding: 20px; /* Adds padding inside each service for spacing */
+    box-sizing: border-box; /* Includes padding in width calculation */
+    text-align: center;
+
+
+}
+
+
+.service h3 {
+    color: #333;
+}
+.walk-img {
+
+    max-width: 60%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 60%; /* 限制圖片最大高度為容器高度 */
+    margin-top: 50px;
+}
+
+.sitting-img {
+
+    max-width: 60%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 60%; /* 限制圖片最大高度為容器高度 */
+    margin-top: 50px;
+}
+
+/* 按鈕樣式 */
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #93bf85; /* Border color */
+    background-color: #9bc58c; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    width: 50%;
+}
+
+.button-link:hover {
+    background-color: #93bf85; /* Darker background on hover */
+}
+/* 底部欄樣式 */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

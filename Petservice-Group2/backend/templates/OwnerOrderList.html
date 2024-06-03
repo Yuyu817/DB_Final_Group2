@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/OrderList.css') }}">
+      <title>
+        OwnerOrderList Page
+      </title>
+   </head>
+   <body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a>
+        <a href="{{ url_for('logout_page') }}" class="logout-button">
+            <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+        </a> 
+        <div class="top-section">
+            <h1>Owner Order Information</h1>
+        </div>
+        <div class="middle-section">
+            
+        {% if type == 'foster' %}
+        <div class="inner">
+            <div class="form-section left">
+                <h3>Order Information</h3>
+                <div class="form-group">
+                    <p><label>Owner Name: {{ owner.OwnerName }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>PetName:{{ pet.PetName }}</label></p>
+                </div>
+                {% for sitter in sitter %}
+                <div class="form-group">
+                    <p><label>SitterName:{{ sitter.SitterName }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>SitterLineId: {{ sitter.SitterLineID }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>SitterEmail: {{ sitter.SitterEmail }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>SitterAddress: {{ sitter.SitterAddress }}</label></p>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="form-section right">
+                <h3>Reserving Service Type</h3>
+                <div class="form-group">
+                    <p><label>ServiceType: {{type}}</label></p>
+                </div>
+
+                {% for fostercare in fostercare %}
+                <div class="form-group">
+                    <p><label>StartDate:{{ fostercare.startdate }}</label></p>
+                </div>
+                <div class="form-group">
+                    <p><label>EndDate:{{ fostercare.enddate }}</label></p>
+                </div>
+
+            </div>
+            {% endfor %}
+            <!-- change url -->
+            <a class="button-link" href="{{ url_for('comment') }}">write comments</a>
+            </div>
+            
+            
+        {% elif type == 'walk' %}
+        <div class="inner">
+            <div class="form-section left">
+                <h3>Order Information</h3>
+                <div class="form-group">
+                    <p><label>Owner Name: {{ owner.OwnerName }}</label></p>
+                </div>
+            
+                <div class="form-group">
+                    <p><label>Pet Name: {{ pet.PetName }}</label></p>
+                </div>
+            
+                {% for sitter in sitter %}
+                <div class="form-group">
+                    <p><label>Sitter Name: {{ sitter.SitterName }}</label></p>
+                </div>
+            
+                <div class="form-group">
+                    <p><label>Sitter Line ID: {{ sitter.SitterLineID }}</label></p>
+                </div>
+            
+                <div class="form-group">
+                    <p><label>Sitter Email: {{ sitter.SitterEmail }}</label></p>
+                </div>
+            
+                <div class="form-group">
+                    <p><label>Sitter Address: {{ sitter.SitterAddress }}</label></p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="form-section right">
+                <h3>Service Type</h3>
+                <div class="form-group">
+                    <p><label>ServiceType: {{type}}</label></p>
+                </div>
+            
+                {% for walk in walk %}
+                <div class="form-group">
+                    <p><label>StartDate:{{ walk.startdate }}</label></p>
+                </div>
+            
+                <div class="form-group">
+                    <p><label>Duration:{{ walk.duration }}</label></p>
+                </div>
+            
+                <div class="form-group">
+                    <p><label>Sitter Email: {{ sitter.SitterEmail }}</label></p>
+                </div>
+            
+                <div class="form-group">
+                    <p><label>Frequency:{{ walk.frequency }}</label></p>
+                </div>
+                {% endfor %}        
+                <a class="button-link" href="{{ url_for('comment') }}">Write Comments</a>
+            </div>
+        <!-- change url -->
+
+        </div>
+        
+        {% endif %}
+</div>
+</div>
+   </body>
+</html>

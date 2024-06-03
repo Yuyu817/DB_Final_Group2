@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>筛选页面</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/OwnerSearchFilter.css') }}">
+</head>
+<body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a>
+        <a href="{{ url_for('logout_page') }}" class="logout-button">
+            <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
+            
+        </a> 
+        <img class="walk-img" src="{{ url_for('static', filename='img/Walk.png') }}" alt="">
+        <img class="sitting-img" src="{{ url_for('static', filename='img/Sitting.png') }}" alt="">
+    <div class="inner">
+    <h1>Choosing Pet Sitter</h1>
+        <br>
+        <form action="{{ url_for('owner_search_reservation_page') }}" method="get">
+            <p><label for="condition1">Order Type</label>
+            <select id="condition1" name="condition1">
+                <option value="walk">walk</option>
+                <option value="foster">foster</option>
+            </select><br><br></p>
+    
+            <p><label for="condition2">Rating</label>
+            <select id="condition2" name="condition2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br></p>
+    
+            <p><label for="condition3">Pet Type</label>
+            <select id="condition3" name="condition3">
+                <option value="cat">cat</option>
+                <option value="dog">dog</option>
+            </select><br><br>
+    
+            <p><label for="condition4">Veterinary Experience</label>
+            <select id="condition4" name="condition4">
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+            </select><br><br></p>
+            <div class="parent-container">
+                <button class="button-link" type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+    </div>
+</body>
+</html>

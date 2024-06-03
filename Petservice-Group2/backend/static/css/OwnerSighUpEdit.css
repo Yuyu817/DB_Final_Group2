@@ -1,0 +1,216 @@
+/* Base styles for body to ensure full coverage of background image */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+.section {
+    width: 100%; /* Full width */
+    height: 100vh; /* Each section takes the full height of the viewport */
+    flex-direction: column; /* Ensures vertical stacking of items */
+    align-items: center; /* This will horizontally center the children */
+    justify-content: center; /* This will vertically center the children */
+}
+/* Wrapper styles to position and style the background image */
+.wrapper {
+    background-image: url('path_to_your_background_image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Home button styling */
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logout-button {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+}
+
+.logout-button img {
+    max-width: 35%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 35%; /* 限制圖片最大高度為容器高度 */
+    display: block; /* 避免底部出現額外間隙 */
+    transform: translateX(75px); /* 向右移動 20 像素 */
+    }
+
+/* Inner wrapper styles for the form area */
+.inner1 {
+    background-color: rgba(245, 245, 245, 0.7);
+    border-color: 2px grey;
+    background-position: center; /* 將圖片定位到容器的中心 */
+    /* Centering the content box */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.inner2 {
+    background: url('../img/inner.png'); 
+    background-repeat: no-repeat; /* 確保圖片不會重複 */
+    background-position: center; /* 將圖片定位到容器的中心 */
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.top-section, .bottom-section {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.middle-section {
+    display: flex;
+    justify-content: space-between;
+    flex: 8; /* Major space allocated here */
+}
+
+.left-part, .right-part {
+    flex: 5; /* Equal width for both sides */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* Styling the form and its elements */
+form {
+    padding: 40px; /* Adjust as necessary */
+    width: 80%;
+}
+
+.form-group {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Space between form groups */
+}
+
+.form-wrapper {
+    margin-bottom: 20px;
+}
+
+.form-group-right {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Space between form groups */
+    height: calc(3 * 44px); /* Adjust the multiplier based on your base height */
+}
+.form-control {
+    height: 8px;
+    width: 60%;  /* 如果需要调整宽度 */
+    font-size: 14px;  /* 字体大小可以适当减小以适应更小的输入框 */
+    box-sizing: border-box;  /* 包括padding和border在内的总宽度 */
+    border: 1px solid #ccc;  /* 可以调整边框颜色和样式 */
+    border-radius: 4px;  /* 轻微的圆角边缘 */
+    height: auto;  /* 让高度自动调整基于内边距和内容 */
+    margin-bottom: 5px;
+    flex: 1; /* 输入框占用剩余空间 */
+    padding: 8px;
+}
+.right .form-control {
+    height: calc(3 * 44px); /* Making these input fields three times taller */
+}
+form h3 {
+    margin-bottom: 40px;
+    color: #333;
+}
+
+
+.form-group label {
+    flex: 0 0 150px; /* 给标签一个固定宽度 */
+    color: black; /* 设置文本颜色为黑色 */
+}
+
+.button {
+    background-color: #b7d5ac;
+    color: black;
+    border: 1px #93bf85;  // 设置1像素宽、实线、灰色的边框
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width:40%;
+    display: block;
+    font-size:24px;
+    margin: auto; /* 添加此行使按钮在容器中水平居中 */
+}
+
+
+.info-wrapper {
+    padding: 40px;
+    width: 50%;
+}
+
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-body {
+    background-color: #FFEB99; /* Lighter inner background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 10px; /* Space between form groups */
+}
+
+.form-group label {
+    margin-right: 10px; /* Space between label and input */
+    width: 80px; /* Fixed width for labels */
+    text-align: right; /* Align text to the right */
+}
+
+.form-group input {
+    flex-grow: 1; /* Input takes remaining space */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: center; /* Centering the button */
+    margin-top: 20px; /* Space between form body and footer */
+}
+
+.form-footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F9A825; /* Color for the button */
+    color: white;
+    cursor: pointer;
+}
+
+.home-button{
+    position:absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .inner {
+        flex-direction: column;
+        width: 90%; /* Adjust as necessary for smaller devices */
+    }
+
+    .image-holder, form {
+        width: 100%;
+    }
+}

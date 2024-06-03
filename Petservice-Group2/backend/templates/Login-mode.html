@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginMode Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/LoginMode.css') }}">
+</head>
+<body>
+    <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            <img src="{{ url_for('static', filename='img/home.png') }}" alt="Home">
+        </a> 
+        <div class="inner">
+            <div class="block">
+                <h2>我是寵物保母</h2>
+                <div class="image-holder">
+                    <img src="{{ url_for('static', filename='img/Sitter.png') }}" alt="">
+                </div>
+                <a class="button-link" href="{{ url_for('sitter_login_page') }}">以寵物保母身分登入!</a>
+            </div>
+            <div class="block">
+                <h2>我是寵物主人</h2>
+                <div class="image-holder">
+                    <img src="{{ url_for('static', filename='img/Owner.png') }}" alt="">
+                </div>
+                
+                <a class="button-link" href="{{ url_for('owner_login_page') }}">以寵物主人身分登入!</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

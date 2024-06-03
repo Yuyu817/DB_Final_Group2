@@ -1,0 +1,153 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #F8ECC2;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-image: url('kitty-cat.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Home button styling */
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.home-button img {
+    max-width: 100%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 100%; /* 限制圖片最大高度為容器高度 */
+    display: block; /* 避免底部出現額外間隙 */
+}
+
+.logout-button {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+}
+
+.logout-button img {
+    max-width: 35%; /* 限制圖片最大寬度為容器寬度 */
+    max-height: 35%; /* 限制圖片最大高度為容器高度 */
+    display: block; /* 避免底部出現額外間隙 */
+    transform: translateX(230px); /* 向右移動 20 像素 */
+    }
+    
+
+
+
+.logout-button{
+    position:absolute;
+    top: 20px;
+    right: 160px;
+}
+
+
+.inner {
+    background-color: rgba(245, 245, 245, 0.7);
+    border-color: 2px grey;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vmin;
+    height: 40vmin;
+    display: flex;
+    justify-content: space-between;
+    padding: 5vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+}
+
+
+
+.title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+/* Styling for inputs and selects */
+.form-control {
+    height: 10px;
+    width: 80%;  /* 如果需要调整宽度 */
+    font-size: 20px;  /* 字体大小可以适当减小以适应更小的输入框 */
+    box-sizing: border-box;  /* 包括padding和border在内的总宽度 */
+    border: 1px solid #ccc;  /* 可以调整边框颜色和样式 */
+    border-radius: 4px;  /* 轻微的圆角边缘 */
+    height: auto;  /* 让高度自动调整基于内边距和内容 */
+    margin-bottom: 5px;
+    flex: 1; /* 输入框占用剩余空间 */
+    padding: 8px;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 300px; /* Ensures it never gets narrower than 200px */
+    max-width: 300px; /* Ensures it never gets wider than 400px */
+    font-weight: bold; /* Makes the text bold */
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.label {
+    flex: 0 0 150px; /* 给标签一个固定宽度 */
+    color: black; /* 设置文本颜色为黑色 */
+    font-weight: bold; /* Makes the text bold */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #93bf85; /* Border color */
+    background-color: #9bc58c; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.button-link:hover {
+    background-color: #93bf85; /* Darker background on hover */
+}
+
+@media (max-width: 768px) {
+    .inner, .photo-wrapper {
+        width: 100%; /* Full width for smaller screens */
+        padding: 10px;
+    }
+    .info-row, .action-buttons button {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: center; /* Center align to maintain consistency */
+    }
+}
