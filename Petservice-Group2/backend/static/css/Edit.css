@@ -137,7 +137,7 @@ body, html {
 }
 
 .form-section.right{
-    flex: 1;
+    flex: 1.5;
     
     justify-content: flex-start; 
 }
@@ -165,7 +165,7 @@ body, html {
 }
 
 .form-section-owner.right{
-    flex: 2;
+    flex: 1;
     
     justify-content: flex-start; 
 }

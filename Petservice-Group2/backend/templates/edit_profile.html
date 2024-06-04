@@ -28,11 +28,13 @@
  
                 <div class="middle-section">
                     <div class="form-section left">
-            <p>{{ owner_form.ownerusername.label }}: {{ owner_form.ownerusername }}</p>
-            <p>{{ owner_form.ownerpassword.label }}: {{ owner_form.ownerpassword }}</p>
-            <p> {{ owner_form.owneremail_address.label }}: {{ owner_form.owneremail_address }}</p>
-            <p> {{ owner_form.ownerphonenumber.label }}: {{ owner_form.ownerphonenumber }}</p>
-            <p> {{ owner_form.owneraddress.label }}: {{ owner_form.owneraddress }}</p>
+            <p>{{ owner_form.ownerusername.label }} {{ owner_form.ownerusername }}</p>
+            <p>{{ owner_form.ownerpassword.label }} {{ owner_form.ownerpassword }}</p>
+            <p> {{ owner_form.owneremail_address.label }} {{ owner_form.owneremail_address }}</p>
+            <p> {{ owner_form.ownerphonenumber.label }} {{ owner_form.ownerphonenumber }}</p>
+            <p> {{ owner_form.owneraddress.label }} {{ owner_form.owneraddress }}</p>
+            <p>{{ pet_form.pettype.label }} {{ pet_form.pettype }}</p>
+            
             </div>
             <div class="form-section right">
         <!-- Pet Form -->
@@ -40,16 +42,16 @@
         <!-- Add form fields for pet details -->
         
 
-        {{ pet_form.pettype.label }}: {{ pet_form.pettype }}
-        {{ pet_form.petname.label }}: {{ pet_form.petname }}
-        {{ pet_form.petsize.label }}: {{ pet_form.petsize }}
-        {{ pet_form.petage.label }}: {{ pet_form.petage }}
-        {{ pet_form.vaccinationstatus.label }}: {{ pet_form.vaccinationstatus }}
-        {{ pet_form.habits.label }}: {{ pet_form.habits }}
-        {{ pet_form.specialneed.label }}: {{ pet_form.specialneed }}
+        <p>{{ pet_form.petname.label }} {{ pet_form.petname }}</p>
+        <p>{{ pet_form.petsize.label }} {{ pet_form.petsize }}</p>
+        <p>{{ pet_form.petage.label }} {{ pet_form.petage }}</p>
+        <p>{{ pet_form.vaccinationstatus.label }} {{ pet_form.vaccinationstatus }}</p>
+        <p>{{ pet_form.habits.label }} {{ pet_form.habits }}</p>
+        <p>{{ pet_form.specialneed.label }} {{ pet_form.specialneed }}</p>
 
         <button type="submit" class="button-link">Update</button>
     </form>
+    </div>
         </div>
         </div>
     
@@ -65,24 +67,25 @@
         <!-- Add form fields for sitter details -->
         <div class="middle-section">
         <div class="form-section left">
-        <p>{{ sitter_form.sitterusername.label }}: {{ sitter_form.sitterusername }}</p>
-        <p>{{ sitter_form.sitterlineid.label }}: {{ sitter_form.sitterlineid }}</p>
-        <p>{{ sitter_form.sitterpassword.label }}: {{ sitter_form.sitterpassword }}</p>
-        <p>{{ sitter_form.sitterphonenumber.label }}: {{ sitter_form.sitterphonenumber }}</p>
-        <p>{{ sitter_form.sitteraddress.label }}: {{ sitter_form.sitteraddress }}</p>
-        <p>{{ sitter_form.sitteremail.label }}: {{ sitter_form.sitteremail }}</p>
-        <p>{{ sitter_form.sitterExperienceInVet.label }}: {{ sitter_form.sitterExperienceInVet }}</p>
-        <p>{{ sitter_form.sitterExperienceInPetCare.label }}: {{ sitter_form.sitterExperienceInPetCare }}</p>
-        <p>{{ sitter_form.sitterAcceptedPetTypes.label }}: {{ sitter_form.sitterAcceptedPetTypes }}</p>
+        <p>{{ sitter_form.sitterusername.label }} {{ sitter_form.sitterusername }}</p>
+        <p>{{ sitter_form.sitterlineid.label }} {{ sitter_form.sitterlineid }}</p>
+        <p>{{ sitter_form.sitterpassword.label }} {{ sitter_form.sitterpassword }}</p>
+        <p>{{ sitter_form.sitterphonenumber.label }} {{ sitter_form.sitterphonenumber }}</p>
+        <p>{{ sitter_form.sitteraddress.label }} {{ sitter_form.sitteraddress }}</p>
+        <p>{{ sitter_form.sitteremail.label }} {{ sitter_form.sitteremail }}</p>
+        <p>{{ sitter_form.sitterExperienceInVet.label }} {{ sitter_form.sitterExperienceInVet }}</p>
+        <p>{{ sitter_form.sitterExperienceInPetCare.label }} {{ sitter_form.sitterExperienceInPetCare }}</p>
+       
         </div>
         <div class="form-section right">
-        <p>{{ sitter_form.sitterServiceTypes.label }}: {{ sitter_form.sitterServiceTypes }}</p>
-        <p>{{ sitter_form.sitterPetSpaceSize.label }}: {{ sitter_form.sitterPetSpaceSize }}</p>
-        <p>{{ sitter_form.sitterPetFeeder.label }}: {{ sitter_form.sitterPetFeeder }}</p>
-        <p>{{ sitter_form.sitterCatTree.label }}: {{ sitter_form.sitterCatTree }}</p>
-        <p>{{ sitter_form.sitterPetBed.label }}: {{ sitter_form.sitterPetBed }}</p>
-        <p>{{ sitter_form.sitterToy.label }}: {{ sitter_form.sitterToy }}</p>
-        <p>{{ sitter_form.sitterSecurityCamera.label }}: {{ sitter_form.sitterSecurityCamera }}</p>
+        <p>{{ sitter_form.sitterAcceptedPetTypes.label }} {{ sitter_form.sitterAcceptedPetTypes }}</p>
+        <p>{{ sitter_form.sitterServiceTypes.label }}{{ sitter_form.sitterServiceTypes }}</p>
+        <p>{{ sitter_form.sitterPetSpaceSize.label }} {{ sitter_form.sitterPetSpaceSize }}</p>
+        <p>{{ sitter_form.sitterPetFeeder.label }} {{ sitter_form.sitterPetFeeder }}</p>
+        <p>{{ sitter_form.sitterCatTree.label }} {{ sitter_form.sitterCatTree }}</p>
+        <p>{{ sitter_form.sitterPetBed.label }} {{ sitter_form.sitterPetBed }}</p>
+        <p>{{ sitter_form.sitterToy.label }} {{ sitter_form.sitterToy }}</p>
+        <p>{{ sitter_form.sitterSecurityCamera.label }} {{ sitter_form.sitterSecurityCamera }}</p>
 
         
         <button type="submit" class="button-link">Update</button>
