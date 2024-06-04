@@ -13,18 +13,25 @@
         <a href="{{ url_for('logout_page') }}" class="logout-button">
             <img src="{{ url_for('static', filename='img/Logout.png') }}" alt="Logout">
         </a> 
-        <div class="inner1">
-                        <form  method="POST"> 
+        
+        <div class="inner">
+                    <form  method="POST"> 
+                        
                             {{ form.hidden_tag() }}
-                            <h1>Registering As A Pet Sitter!</h1>
-                                            
-                            <div class="form-group">
+                            <div class="top-section">
+                                <h1>Registering As A Pet Sitter!</h1>
+                            </div>
+                       
+                            <div class="middle-section">
+                                <div class="form-section left">
+                                    <div class="form-group">
                             <p><label for="sittername"><strong>使用者名稱</strong></label></p>
                             {{ form.sitterusername(class="form-control", placeholder="Username") }}
                            </div>
                            <div class="form-group">
                            <p><label for="sitterpassword"><strong>設定密碼</strong></label></p>
                             {{ form.sitterpassword(class="form-control", placeholder="Password") }}
+                            </div>
                             <div class="form-group">
                             <p><label for="sitterlineid "><strong>LineID</strong></label></p>
                             {{ form.sitterlineid(class="form-control", placeholder="Line ID") }}
@@ -37,23 +44,26 @@
                             <p><label for="sitteraddress"><strong>地址</strong></label></p>
                             {{ form.sitteraddress(class="form-control", placeholder="Address") }}
                         </div>
-                            <div class="form-group"></div>
+                            <div class="form-group">
                             <p><label for="sitteremail"><strong>Email</strong></label></p>
                             {{ form.sitteremail(class="form-control", placeholder="Email Address") }}
                         </div>
+                        <div class="form-group">
+                            <p><label for="acceptedpettypes"><strong>可接受寵物類型(dog/cat)</strong></label></p>
+                            {{ form.sitterAcceptedPetTypes(class="form-control", placeholder="Accepted Pet Types(dog/cat)") }}
+                           </div>
+                           <div class="form-group">
+                            <p><label for="ServiceTypes:"><strong>提供的服務(walk/foster)</strong></label></p>
+                            {{ form.sitterServiceTypes(class="form-control", placeholder="Service Types(walk/foster)") }}
+                        </div>
                     </div>
                     
-                </div>
-                            <div class="inner2">  
-                                <div class="wrapper" style="background-image: url('/static/img/background.jpg')">                
-                                <div class="form-group">
-                                <p><label for="acceptedpettypes"><strong>可接受寵物類型(dog/cat)</strong></label></p>
-                                {{ form.sitterAcceptedPetTypes(class="form-control", placeholder="Accepted Pet Types(dog/cat)") }}
-                               </div>
-                               <div class="form-group">
-                                <p><label for="ServiceTypes:"><strong>提供的服務(walk/foster)</strong></label></p>
-                                {{ form.sitterServiceTypes(class="form-control", placeholder="Service Types(walk/foster)") }}
-                            </div>
+               
+                    
+                
+                            <div class="form-section right">  
+                                              
+                               
                             <div class="form-group">
                                 <p><label for="petspacesize"><strong>保母空間大小(number)</strong></label></p>
                                 {{ form.sitterPetSpaceSize(class="form-control", placeholder="Pet Space Size(number)") }}
@@ -86,18 +96,20 @@
                                 <p><label for="SecurityCamera"><strong>監視器(yes/no)</strong></label></p>
                                 {{ form.SecurityCamera(class="form-control", placeholder="SecurityCamera(yes/no)") }}  
                             </div>
-                                    <!-- Bottom Section -->
+                            </div>
+
+                        </div>  
+                        <!-- Bottom Section -->
                                     <div class="bottom-section">
                                         {{ form.submit(class="button-link") }}
-                                    </div>
+                            </div>        
                                     
                         </form>
-                    </div>
-                    
+
                 </div>
                 </div>
 
-        </div>
+
 
     </div>
 </body>

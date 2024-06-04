@@ -17,6 +17,8 @@
             <form method="POST">
                 {{ form2.hidden_tag() }}
                 <h1>Registering As A Pet Owner!</h1>
+                <div class="middle-section">
+                    <div class="form-section left">
                             <div class="form-group">
                                 <label for="ownername"><strong>使用者名稱 </strong></label>
                                 {{ form2.ownerusername(class="form-control", placeholder="Username") }}
@@ -26,7 +28,10 @@
                                 <label for="owneremail"><strong>email </strong></label>
                                 {{ form2.owneremail_address(class="form-control", placeholder="Email Address") }}
                             </div>
-    
+                            <div class="form-group">
+                                <label for="ownerpassword"><strong>設定密碼 </strong></label>
+                                {{ form2.ownerpassword(class="form-control", placeholder="Password") }}
+                            </div>
                             <div class="form-group">
                                 <label for="owneraddress"><strong>住址 </strong></label>
                                 {{ form2.owneraddress(class="form-control", placeholder="Address") }}
@@ -36,31 +41,17 @@
                                 <label for="phonenumber"><strong>電話號碼 </strong></label>
                                 {{ form2.ownerphonenumber(class="form-control", placeholder="Phone Number") }}
                             </div>
-                            
-    
-                             <div class="form-group">
-                                <label for="ownerpassword"><strong>設定密碼 </strong></label>
-                                {{ form2.ownerpassword(class="form-control", placeholder="Password") }}
-                            </div>
                             <div class="bottom-section">
     
-                                {{ form2.submit(class="btn btn-lg btn-block btn-primary", placeholder="登入") }}
+                                {{ form2.submit(class="button-link", placeholder="登入") }}
                             </div>
+                            
     
                     </div>
-                </div>
-            </div>
+
     
-            <!-- section2 -->
-            <div class="section" id="section2" >
-                <div class="wrapper" style="background-image: url('/static/img/background.jpg')">
-
-                    <div class="inner">
-
-                        <!-- middle-section -->
-                        <div class="middle-section">
-                            <!-- Left Div-->
-                            <div class="left-part">
+                        <!-- section2 -->
+                            <div class="form-section right"> 
                                 <form method="POST">
                                     <div class="form-group">
                                         <label for="petname"><strong>寵物暱稱 </strong></label>
@@ -93,14 +84,8 @@
     
                             </form>
                         </div>
-                        <!-- Right-Div-->       
-                        <div class="right-part">   
-                            <form action="">
-                                
-                            </form>
-                        </div> 
-                    </div> 
-                </div>       
- </div>
+
+                    </div>       
+                </div>
         </body>
     </html>

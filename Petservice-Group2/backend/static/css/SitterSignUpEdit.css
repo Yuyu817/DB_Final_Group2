@@ -61,6 +61,18 @@ body, html {
     margin: 0 auto; /* 新增：水平居中对齐 */
 }
 
+/* Inner wrapper styling */
+.inner {
+    background-color: rgba(245, 245, 245, 0.7);
+    border-color: 2px grey;
+    display: flex;
+    flex-direction: column;
+    width: 80%; /* Adjust as needed for proper spacing */
+    padding: 20px;
+    box-sizing: boder-box;
+    margin: 0 auto; /* 新增：水平居中对齐 */
+}
+
 /* Inner: top-section*/
 .top-section {
     width: 100%;
