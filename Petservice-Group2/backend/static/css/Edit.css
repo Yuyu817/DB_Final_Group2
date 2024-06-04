@@ -64,6 +64,8 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50%;
+
 }
 
 /* Inner: top-section*/
@@ -89,7 +91,9 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex: 10;
+    flex: 2.2;
+    flex-direction: row;
+    width: 100%;;
 }
 
 /*middle-section: photo-wrapper*/
@@ -120,17 +124,46 @@ body, html {
 
 .form-section.left, .form-section.right{
     display: flex;
-    flex-direction: row; /* 水平布局 */
+    flex-direction: column; /* 水平布局 */
 }
 
 .form-section.left{
-    flex: .8;
+    flex: 1.2;
     justify-content: flex-end; /* Aligns content to the right */
+
 
 }
 
 .form-section.right{
     flex: 1;
+    
+    justify-content: flex-start; 
+}
+
+/*middle-section: form-section*/
+.form-section-owner {
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex; /* Ensures flex properties are applied */
+
+}
+
+
+.form-section-owner.left, .form-section-owner.right{
+    display: flex;
+    flex-direction: column; /* 水平布局 */
+}
+
+.form-section-owner.left{
+    flex: 1.2;
+    justify-content: flex-end; /* Aligns content to the right */
+    background-color: aquamarine;
+
+
+}
+
+.form-section-owner.right{
+    flex: 2;
     
     justify-content: flex-start; 
 }
@@ -199,6 +232,7 @@ body, html {
     background-color: #9bc58c; /* Background color */
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s ease; /* Smooth transition */
+    width: 50%;
 }
 
 .button-link:hover {
