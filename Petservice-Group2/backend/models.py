@@ -33,7 +33,7 @@ class Owner(db.Model, UserMixin):
     OwnerID = db.Column(db.Integer(), primary_key=True)
     OwnerName = db.Column(db.String(length=60), nullable=False)
     OwnerAddress = db.Column(db.String(length=100), nullable=False)
-    OwnerPhoneNumber = db.Column(db.Integer(), nullable=False)
+    OwnerPhoneNumber = db.Column(db.String(length=60), nullable=False))
     OwnerEmail = db.Column(db.String(length=60), nullable=False)
     OwnerPassword = db.Column(db.String(length=60), nullable=False)
     # relationship with pets
@@ -64,7 +64,7 @@ class Petsitter(db.Model, UserMixin):
     SitterID = db.Column(db.Integer(), primary_key=True)
     SitterName = db.Column(db.String(length=60), nullable=False)
     SitterPassword = db.Column(db.String(length=60), nullable=False)
-    SitterPhoneNumber = db.Column(db.Integer(), nullable=False)
+    SitterPhoneNumber = db.Column(db.String(length=60), nullable=False)
     SitterLineID = db.Column(db.String(length=60), nullable=False)
     SitterEmail = db.Column(db.String(length=60), nullable=False)
     SitterAddress = db.Column(db.String(length=100), nullable=False)
